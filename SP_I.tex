@@ -1,0 +1,170 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\addtolength{\leftmargin}{3.0cm}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{mathptmx}
+\title{\textbf{Smart Home Control System Using IoT and AI}}
+\author{by\\\\
+	Weijie Huang\\\\
+	Xingyu Wang\\\\
+	Hongyu Wu}
+\date{}
+
+\begin{document}
+\singlespacing
+	\maketitle
+	\begin{center}
+		A report submitted in partial fulfillment of the requirements for \\degree of Bachelor of Engineering in\\ Computer Engineering\\[1in]
+
+		Project Advisor:\\[0.1in] Dr. Anand Dersingh\\[0.2in] Examination Committee:\\[0.1in]
+
+		Dr. Jerapong Rojanarowan, Dr. Wisuwat Plodpradista,\\
+
+		Assoc. Prof. Dr. Jiradech Kongthon, Mr. Sunchanan Charanyananda,\\
+
+		Mr. Amulya Bhattarai, Mr. Ehsan Ali\\[0.4in]
+
+		Assumption University\\
+		Vincent Mary School of Engineering\\
+		Thailand\\
+		Aug 2020
+	\end{center}
+	\pagenumbering{gobble}
+\clearpage
+%Cover page
+
+\begin{flushleft}
+\textbf{Signature Page}\\[0.2in]
+Approved by Project Advisor:\\[0.2in]
+\end{flushleft}
+\setlength{\leftskip}{10cm} Name: Dr. Anand Dersingh\\[0.2in]
+Signature:\underline{\hspace{3cm}}\\[0.2in]
+Date:\underline{\hspace{3.9cm}}\\[0.2in]
+
+\begin{flushleft}
+Plagiarism verified by:\\[0.2in]
+\setlength{\leftskip}{10cm} Name: Mr. Ehsan Ali\\[0.2in]
+Signature:\underline{\hspace{3cm}}\\[0.2in]
+Date:\underline{\hspace{3.9cm}}\\[0.2in]
+\end{flushleft}
+\pagenumbering{arabic}
+
+%page 1 ends
+\newpage
+
+\setlength{\leftskip}{0cm} \section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+With the rapid development of the automation industry and the arrival of the Internet of Things and Artificial Intelligence, smart products are ubiquitous in many fields in our daily life, including industrial automation, home automation (smart home), etc. When it comes to industrial automation, the concept is the use of control systems, such as computers or robots, and information technologies for handling different processes and types of machinery in an industry to replace a human being. As for home automation, building automation for a home, also known as smart home, which is the application of electronics to complete various household tasks with minimal human interaction, such as light control, temperature control, entertainment systems and home security. When connected with the Internet, home devices are important components of the Internet of Things("IoT). The main objective of this project is to design and simulate a practical and convenient smart home using Arduino boards (tentative) with World Wide Web, by means of low power communication protocols like Zigbee, Wi-Fi, as well as fundamental technologies in IoT and AI, allowing the smart home control system to be controlled in multiple ways, such as mobile app, web app, and automatic control. It aims at centralizing the control system, improving operation fluency, circuit design, and software development.
+
+
+%page 2 ends
+\newpage
+\doublespacing
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
+\addcontentsline{toc}{section}{Table of Contents}
+\singlespacing
+
+
+%page 3 ends
+\newpage
+\section{Introduction}
+\subsection{Background}
+\paragraph{}
+With the development of technology and network, more and more electrical appliance connects to the internet, thus, IoT becomes an important topic. \\\par
+
+“Smart home” become a popular idea and many tech companies are starting to make inroads in this area. The research on the smart home will theoretically promote the in-depth development of intelligent technology in the field of electrical appliance and provide certain theoretical bases for the design and development of various new intelligent electrical appliance products, which can produce certain economic and social benefits and greatly enrich the theory of smart home system. \\\par
+
+So far, there are not many scholars have carried out systematic research on smart home, so it has practical guiding significance as the main research content. \\\par
+
+For now, intelligent technology is widely used in electrical appliances, such as Amazon’s smart speaker---ALEXA, which can follow the users’ instructions to achieve some basic functions. But this kind of smart speakers can just only help the user perform simple operations like switching the lights or tv. \\
+
+\subsection{Objectives}
+
+\subsubsection{Connectivity}
+\paragraph{}
+All of the appliances are connected to the network. Every big and small home appliance have a fixed network address, can be controlled at any time. \\\par
+
+\subsubsection{Intelligence}
+\paragraph{}
+With the continuous development of artificial intelligence and the emergence of robots, intelligence is no longer a myth, intelligence is the inevitable trend of the development of intelligent control. Accordingly, the intelligence of appliance also develops to intelligence direction inevitably; Smart home is the inevitable result of IT technology (especially computer technology), network technology, control technology) penetrating into the traditional home appliance industry. \\\par
+
+Intelligence should serve people in a better and more comprehensive way, indicating the final goal of the smart home.\\\par
+
+\subsubsection{Integration}
+\paragraph{}
+Smart home should meet the requirements of automatic management, safety prevention and monitoring, fire alarm, intercom calling, equipment, monitoring and other contents. Integrating their intelligent functions to reduce costs is also a direction of future development.
+%P4 ends
+
+\section{Project Overview}
+\subsection{Function Design}
+\subsubsection{Multi-Source control}
+\paragraph{}
+In order to meet high-quality and convenience needs for our project. Our system adopts multi-source control. \\
+
+There are three types of control source are combined, which are Mobile Application Control, Web Application Control, and Automatic System Control. Among them, Mobile Application Control means that we can use the application on our smart phone as remote for our smart devices. Web Application Control is that after leaving the sever, you can log in to the website running on a specific server through the Internet, and check and manage the current operation of the smart devices. While Automatic System Control refers that the core part of the system can compare the environmental information by external sensors with the user’s setting to create a comfortable
+
+\subsubsection{Temperature Control}
+\paragraph{}
+Indoor temperature is collected through the temperature sensor. When the collected temperature is lower than or higher than the preset threshold value, the system will adjust the air conditioning temperature and adjust it back to the preset temperature or the temperature set by the user.
+
+\subsubsection{Humidity Control}
+\paragraph{}
+Measure the current temperature through the temperature sensor and send it to Arduino for conversion and analyze or control it by the software. \\
+
+To control the humidity, we can have an automated fan control. Given a setpoint, if humidity is higher than the setpoint or anyone is taking a shower, the fan will automatically on. Otherwise, the fan is off. And also, we will set up notifications that alert us on the smartphone when the humidity is to low or too high for more than one hour.
+
+\subsubsection{Voice Assistant (voice-controlled switches)}
+\paragraph{}
+Voice assistant is one of the key factors that makes our home smart. It allows us to control all the devices through voice when our phones are not nearby. With the voice assistant, we can easily control our devices by calling it, for example, “Hello Sb, turn on the light!” You say a phrase to wake it up, give a command, and it will respond with its own computer-generated voice. We will need a microphone, a speaker, and a Raspberry Pi which we can design and develop our own Pi project on it. For the concerned of security, voice assistant can only be active by authorized user through mobile application.\\
+
+\subsubsection{Default Mode Control}
+\paragraph{}
+It is tedious, by hand, to set room temperature, water temperature, indoor humidity, etc., one by one when the user's needs varying based on different seasons. So, it is reasonable to integrate desirable set-point values and control only one value for all. For example, when the Summer Mode is on, automatically the water cooler should be set to provide cold water, and the room temperature should be set relatively low
+
+\subsubsection{Face recognition access control system}
+\paragraph{}
+This system is using face recognition to detect the human face, and it must be connected to the internet all the time. When someone’s face shows up in front of the camera (the camera detects human face), it will compare the pre-set face in the database, if the system recognizes the face and it accord with pre-set face in the database, it will open the door, otherwise, the system will capture the face of the people try to access and send an alert message to the house owner.
+%P5 ends
+
+\subsection{Hardware Design}
+\subsubsection{Raspberry Pi as Main Control Board}
+\paragraph{}
+\subsubsubsection{Raspberry Pi:}\\
+
+We have decided to choose Raspberry Pi over Arduino Uno R3 as our main control board. Raspberry Pi is a minicomputer with Raspbian OS which can run multiple programs at a time, while Arduino is just a microcontroller. Moreover, Raspberry Pi can be easily connected to the internet using Ethernet port and USB Wi-Fi dongles, it will be more suitable for our project under the consideration of the software application that we are going to design later. The most important part is that, Raspberry Pi is fully programmable, and it acts as the core of our home automation system. It communicates with sensors that collect the data.
+\\\par
+
+\subsubsection{Serial Port}
+\begin{enumerate}[lable=(\alph*)]
+\item	Comply with all RS-232C technical standards.
+\item	A single +5V power supply needed.
+\item	The on-chip charge pump has the ability of boosting and voltage polarity reversal and can generate +10V and -20V voltage.
+\item	Internal integration of RS-232C drivers.
+\item	Internal integration of RS-232C receivers.
+\end{enumerate}
+
+\subsection{Software Design}
+\subsubsection{How does the main control board read and process sensor's data}
+\paragraph{}
+The sensor needs to connect to the series port of the main control board, therefore, the main control board can access and process the data.
+To let the web and mobile application to connect to the main control board, our center control board needs to connect to the IoT cloud platform. Once the board connects to the IoT cloud platform sever, it can upload the sensor data to the IoT platform sever via MQTT protocol. \\
+Next, we can use our mobile and web application to connect the IoT platform sever, so, we can read the sensor's value from the IoT platform sever, meanwhile, we can achieve that using mobile and web application to control the main control board and the devices via HTTP and MQTT protocol. \\
+Here is the architecture between the Central control board and IoT platform connection:\\
+\subsubsection{Mobile Application}
+\paragraph{}
+We are using an open source IOT cloud platform(such as gizwits or Thingsboard) to connect to our device, and we will develop a mobile application (Android or IOS) that can read the status of the device values and control the device. eg：This mobile application read the air quality from the air purity sensor and adjust the pre-set value in the app or turn on the air purifier.
+
+\subsubsection{Web Application}
+\paragraph{}
+In order to achieve multiple control, and we also try to develop a web application to connect the device on the same network. (using HTML, JS, PHP language)
+%P6 ends
+
+\section{Activities and Progress}
+
+\section{Conclusion}
+
+\section*{References}
+\addcontentsline{toc}{section}{References}
+\end{document}
